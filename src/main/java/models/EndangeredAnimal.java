@@ -1,5 +1,5 @@
 package models;
 
-public class EndangeredAnimal extends Animal{
+public class EndangeredAnimal extends Animal implements DatabaseManagement{
 
 }
