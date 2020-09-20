@@ -5,7 +5,7 @@ import org.sql2o.Connection;
 public abstract class Animal {
     public String animalName;
     public int animalId;
-    public String type;
+    public String type;// type of animal either endangered or non-endangered.
     public int id;
 
     public String getAnimalName() {
