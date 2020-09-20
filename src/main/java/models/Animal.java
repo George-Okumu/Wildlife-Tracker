@@ -2,11 +2,20 @@ package models;
 
 import org.sql2o.Connection;
 
+import java.util.Objects;
+
 public abstract class Animal {
     public String animalName;
     public int animalId;
     public String type;// type of animal either endangered or non-endangered.
     public int id;
+
+    public static final String HEALTHY = "healthy";
+    public static final String ill = "ill";
+    public static final int MIN_AGE = 0;
+    public static final String NEWBORN ="newborn";
+    public static final String YOUNG = "young";
+    public static final String ADULT = "adult";
 
     public String getAnimalName() {
         return animalName;
@@ -32,15 +41,30 @@ public abstract class Animal {
         }
     }
 
+//    @Override
+//    public boolean equals(Object otherAnimal){
+//        if (!(otherAnimal instanceof Animal)) {
+//            return false;
+//        } else {
+//            Animal newAnimal = (Animal) otherAnimal;
+//            return this.getAnimalName().equals(newAnimal.getAnimalName()) &&
+//                    this.getAnimalId() == newAnimal.getAnimalId();
+//        }
+//    }
+
+
     @Override
-    public boolean equals(Object otherAnimal){
-        if (!(otherAnimal instanceof Animal)) {
-            return false;
-        } else {
-            Animal newAnimal = (Animal) otherAnimal;
-            return this.getAnimalName().equals(newAnimal.getAnimalName()) &&
-                    this.getAnimalId() == newAnimal.getAnimalId();
-        }
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return animalId == animal.animalId &&
+                animalName.equals(animal.animalName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(animalName, animalId);
     }
 
     public void delete() {
