@@ -22,7 +22,7 @@ public abstract class Animal {
             String sql = "INSERT INTO animals (animalName, animalId, type) VALUES (:animalName, :animalId, :type)";
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("animalName", this.animalName)
-                    .addParameter("personId", this.animalId)
+                    .addParameter("animalId", this.animalId)
                     .addParameter("type", this.type)
                     .executeUpdate()
                     .getKey();
