@@ -16,6 +16,9 @@ public abstract class Animal {
         return animalId;
     }
 
+    public int getId() {
+        return id;
+    }
 
     public void save() {
         try(Connection con = DB.sql2o.open()) {
