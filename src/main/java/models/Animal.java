@@ -7,12 +7,12 @@ import java.util.Objects;
 public abstract class Animal {
     public String animalName;
     public int animalId;
+    public int age;
     public String type;// type of animal either endangered or non-endangered.
     public int id;
 
     public static final String HEALTHY = "healthy";
-    public static final String ill = "ill";
-    public static final int MIN_AGE = 0;
+    public static final String ILL = "ill";
     public static final String NEWBORN ="newborn";
     public static final String YOUNG = "young";
     public static final String ADULT = "adult";
@@ -23,6 +23,10 @@ public abstract class Animal {
 
     public int getAnimalId() {
         return animalId;
+    }
+
+    public int getAge() {
+        return age;
     }
 
     public int getId() {
@@ -40,18 +44,6 @@ public abstract class Animal {
                     .getKey();
         }
     }
-
-//    @Override
-//    public boolean equals(Object otherAnimal){
-//        if (!(otherAnimal instanceof Animal)) {
-//            return false;
-//        } else {
-//            Animal newAnimal = (Animal) otherAnimal;
-//            return this.getAnimalName().equals(newAnimal.getAnimalName()) &&
-//                    this.getAnimalId() == newAnimal.getAnimalId();
-//        }
-//    }
-
 
     @Override
     public boolean equals(Object o) {

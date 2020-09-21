@@ -8,11 +8,18 @@ public class EndangeredAnimal extends Animal implements DatabaseManagement{
 
     public static final String DATABASE_TYPE = "endangeredAnimal";
 
-    public EndangeredAnimal(String animalName, int animalId) {
+    public EndangeredAnimal(String animalName, int animalId, int age) {
         this.animalName = animalName;
         this.animalId = animalId;
+        this.age = age;
+        String health = HEALTHY;
+        String ill = ILL;
+        String newborn = NEWBORN;
+        String young = YOUNG;
+        String adult = ADULT;
         type = DATABASE_TYPE;
     }
+
 
 
 
