@@ -11,6 +11,7 @@ public abstract class Animal {
     public String type;// type of animal either endangered or non-endangered.
     public int id;
 
+
     public static final String HEALTHY = "healthy";
     public static final String ILL = "ill";
     public static final String NEWBORN ="newborn";
