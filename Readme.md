@@ -1,6 +1,6 @@
 # George Okumu Wildlife
 
-- ![Screenshot from 2020-09-22 22-07-46](file:///home/moringa/Pictures/Screenshot%20from%202020-09-22%2022-07-46.png)
+- ![Screenshot from 2020-09-22 22-07-46.png](https://github.com/George-Okumu/Wildlife-Tracker/blob/master/src/main/resources/public/images/ds.png)
 ## About the Project
 - The Forest Service is considering a proposal from a timber company to clearcut a nearby forest of Douglas Fir. 
 - Before this proposal may be approved, they must complete an environmental impact study. 
@@ -23,8 +23,8 @@
   - `CREATE DATABASE wildlife_tracker`
   - `CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker`
  3. You should also have two table names
- `CREATE TABLE animals (id serial PRIMARY KEY, animalName varchar, animalId int, type)`
- `CREATE TABLE sightings (id serial PRIMARY KEY, rangerName varchar, location varchar)`
+ - `CREATE TABLE animals (id serial PRIMARY KEY, animalName varchar, animalId int, type)`
+ - `CREATE TABLE sightings (id serial PRIMARY KEY, rangerName varchar, location varchar)`
  
  ## 
  

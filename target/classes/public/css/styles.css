@@ -3,6 +3,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: auto;
+    background-position: center;
+    height: 801px;
 }
 #welcome{
     padding-top: 10%;

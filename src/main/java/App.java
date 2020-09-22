@@ -91,14 +91,14 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
 
-//        get("/", (req, res)->{
-//            Map<String, Object> model = new HashMap<String, Object>();
-//            List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.all();
-//            List<NonEndangeredAnimal> nonEndangeredAnimals = NonEndangeredAnimal.all();
-//            model.put("endangeredAnimals", endangeredAnimals);
-//            model.put("nonEndangeredAnimals", nonEndangeredAnimals);
-//            return new ModelAndView(model, "index.hbs");
-//        }, new HandlebarsTemplateEngine());
+        get("/", (req, res)->{
+            Map<String, Object> model = new HashMap<String, Object>();
+            List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.all();
+            List<NonEndangeredAnimal> nonEndangeredAnimals = NonEndangeredAnimal.all();
+            model.put("endangeredAnimals", endangeredAnimals);
+            model.put("nonEndangeredAnimals", nonEndangeredAnimals);
+            return new ModelAndView(model, "AllAnimals.hbs");
+        }, new HandlebarsTemplateEngine());
 
     }
 }
