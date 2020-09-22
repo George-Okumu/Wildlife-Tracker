@@ -5,13 +5,17 @@ import org.sql2o.Connection;
 import java.util.List;
 
 public class EndangeredAnimal extends Animal implements DatabaseManagement{
+    private String animalGroupAge;
+    private String animalCondition;
 
     public static final String DATABASE_TYPE = "endangeredAnimal";
 
-    public EndangeredAnimal(String animalName, int animalId, int age) {
+    public EndangeredAnimal(String animalName, int animalId, int age, String animalCondition, String animalGroupAge) {
         this.animalName = animalName;
         this.animalId = animalId;
         this.age = age;
+        this.animalCondition = animalCondition;
+        this.animalGroupAge = animalGroupAge;
         String health = HEALTHY;
         String ill = ILL;
         String newborn = NEWBORN;
