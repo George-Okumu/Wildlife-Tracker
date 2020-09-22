@@ -1,6 +1,6 @@
 # George Okumu Wildlife
 
-- <img src="images/ds.png">
+- ![Screenshot from 2020-07-21 10-35-54](file:///home/moringa/Pictures/Screenshot%20from%202020-09-22%2022-07-46.png)
 
 ## About the Project
 - The Forest Service is considering a proposal from a timber company to clearcut a nearby forest of Douglas Fir. 
