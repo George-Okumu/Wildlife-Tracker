@@ -1,0 +1,29 @@
+.intro{
+    background-image: url("/images/welcomePhoto.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+}
+#welcome{
+    padding-top: 10%;
+    color: white;
+    /* font-size: medium; */
+    /* font-weight: lighter; */
+    font-family: 'Poller One', cursive;  
+    /* font-style: italic; */
+    font-size: 35px;
+}
+.secondPage{
+    padding-top: 10px;
+    color: green;
+    font-size: 20px;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+}
+#card33{
+    background-color: rgba(240, 248, 255, 0.548);
+    height: 320px;
+}
+
+.btns {
+    margin-left: 40%;
+}

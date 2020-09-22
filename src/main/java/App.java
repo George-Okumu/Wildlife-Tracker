@@ -4,21 +4,33 @@ import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.*;
 
 public class App {
+
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+    }
+
     public static void main(String[] args){
 
+
         staticFileLocation("/public");
-        String connectionString = "jdbc:h2:~/todolist.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
-        Sql2o Animals = new Sql2o(connectionString, "moringa", "Georgedatabase1");
+        port(getHerokuAssignedPort());
+       // String connectionString = "jdbc:h2:~/todolist.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+       // Sql2o Animals = new Sql2o(connectionString, "moringa", "Georgedatabase1");
 //        EndangeredAnimal endangeredAnimal = new EndangeredAnimal(StringanimalName, int animalId, );
 
-        get("/", (req, res)->{
+        get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            return new ModelAndView(model, "layout.hbs");
+            return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/newVulnerable", (req, res)->{
@@ -35,8 +47,15 @@ public class App {
             String animalCondition = request.queryParams("animalCondition");
             EndangeredAnimal newEndangeredAnimal = new EndangeredAnimal(animalName, age, animalId, animalGroupAge, animalCondition);
             model.put("newEndangeredAnimal", newEndangeredAnimal);
-            return new ModelAndView(model, "Success.hbs");
+            return new ModelAndView(model, "AllAnimals.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/endangeredAnimal", (req, res)->{
+            Map<String, Object> model = new HashMap<String, Object>();
+            return new ModelAndView(model, "AllAnimals.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
 
 
         get("/newNonExtinct", (req, res)->{
@@ -53,7 +72,7 @@ public class App {
             String animalCondition = request.queryParams("animalCondition");
             NonEndangeredAnimal newNonEndangeredAnimal = new NonEndangeredAnimal(animalName, age, animalId, animalGroupAge, animalCondition);
             model.put("newNonEndangeredAnimal", newNonEndangeredAnimal);
-            return new ModelAndView(model, "Success.hbs");
+            return new ModelAndView(model, "AllAnimals.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/sighting", (req, res)->{
@@ -68,8 +87,18 @@ public class App {
             String rangerName = request.queryParams("rangerName");
             Sighting newSighting = new Sighting(animalId, location, rangerName);
             model.put("newSighting", newSighting);
-            return new ModelAndView(model, "Success.hbs");
+            return new ModelAndView(model, "AllAnimals.hbs");
         }, new HandlebarsTemplateEngine());
+
+
+//        get("/", (req, res)->{
+//            Map<String, Object> model = new HashMap<String, Object>();
+//            List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.all();
+//            List<NonEndangeredAnimal> nonEndangeredAnimals = NonEndangeredAnimal.all();
+//            model.put("endangeredAnimals", endangeredAnimals);
+//            model.put("nonEndangeredAnimals", nonEndangeredAnimals);
+//            return new ModelAndView(model, "index.hbs");
+//        }, new HandlebarsTemplateEngine());
 
     }
 }

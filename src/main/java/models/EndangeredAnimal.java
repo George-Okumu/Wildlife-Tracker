@@ -16,11 +16,6 @@ public class EndangeredAnimal extends Animal implements DatabaseManagement{
         this.age = age;
         this.animalCondition = animalCondition;
         this.animalGroupAge = animalGroupAge;
-        String health = HEALTHY;
-        String ill = ILL;
-        String newborn = NEWBORN;
-        String young = YOUNG;
-        String adult = ADULT;
         type = DATABASE_TYPE;
     }
 

@@ -5,9 +5,11 @@
 
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" /><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poller+One&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <div class="container-fluid">
@@ -19,7 +21,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="/">Animals <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="/newVulnerable">Vulnerable Animals</a>
                     <a class="nav-item nav-link" href="/newNonExtinct">Non-Extinct</a>
                     <a class="nav-item nav-link" href="/sighting">Sighting</a>
@@ -30,9 +32,6 @@
     </div>
     <div class="intro">
         <!--begin main template-->
-        <div class="text-center" id="welcome">
-            <h1>Welcome to Wildlife-Track App.</h1>
-        </div>
 
         <div class="container">
             {{#block "content"}}
@@ -42,6 +41,10 @@
     </div>
     <!--end main template-->
 {{#block "footer"}}
+
+            <script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
+            <script src="./js/script.js"></script>
+            <script src="./js/bootstrap.min.js"></script>
     </div>
     </body>
     </html>
