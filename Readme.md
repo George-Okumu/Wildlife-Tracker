@@ -1,6 +1,6 @@
-# George Okumu Wildlife
+# Project Name
+- Wildlife Tracker
 
-- ![Screenshot from 2020-09-22 22-07-46.png](https://github.com/George-Okumu/Wildlife-Tracker/blob/master/src/main/resources/public/images/ds.png)
 ## About the Project
 - The Forest Service is considering a proposal from a timber company to clearcut a nearby forest of Douglas Fir. 
 - Before this proposal may be approved, they must complete an environmental impact study. 
@@ -8,7 +8,7 @@
 - The application tracks two categories of wildlife: endangered species and non-endangered.
 
 ## Live Link
-
+https://innocentwildlifetracker.herokuapp.com/
 
 ## Setup Instructions
 - Fork from https://github.com/George-Okumu/Wildlife-Tracker

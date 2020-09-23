@@ -4,6 +4,10 @@
     background-size: cover;
     overflow: auto;
 }
+
+.allAnimals {
+    height: 500px;
+}
 #welcome{
     padding-top: 10%;
     color: white;
@@ -26,4 +30,8 @@
 
 .btns {
     margin-left: 40%;
+}
+
+.endangeredAnimal {
+    height: 640px;
 }

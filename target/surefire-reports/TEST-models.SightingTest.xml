@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="models.SightingTest" time="0.518" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="models.SightingTest" time="0.476" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.7+10"/>
@@ -61,11 +61,11 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="equals_returnsTrueIfAnimalIdRangerNameAndLocationAreTheSame_true" classname="models.SightingTest" time="0.285"/>
-  <testcase name="sighting_instantiatesCorrectly_true" classname="models.SightingTest" time="0.007"/>
-  <testcase name="all_returnsAllInstancesOfSighting_true" classname="models.SightingTest" time="0.092"/>
-  <testcase name="save_insertsObjectIntoDatabase_" classname="models.SightingTest" time="0.032"/>
-  <testcase name="sighting_instantiatesCorrectlyWithLocation" classname="models.SightingTest" time="0.017"/>
-  <testcase name="sighting_instantiatesWithAnimalId_true" classname="models.SightingTest" time="0.007"/>
-  <testcase name="sighting_instantiatesCorrectlyWithRangerName_rangerName" classname="models.SightingTest" time="0.006"/>
+  <testcase name="equals_returnsTrueIfAnimalIdRangerNameAndLocationAreTheSame_true" classname="models.SightingTest" time="0.215"/>
+  <testcase name="sighting_instantiatesCorrectly_true" classname="models.SightingTest" time="0.003"/>
+  <testcase name="all_returnsAllInstancesOfSighting_true" classname="models.SightingTest" time="0.104"/>
+  <testcase name="save_insertsObjectIntoDatabase_" classname="models.SightingTest" time="0.043"/>
+  <testcase name="sighting_instantiatesCorrectlyWithLocation" classname="models.SightingTest" time="0.007"/>
+  <testcase name="sighting_instantiatesWithAnimalId_true" classname="models.SightingTest" time="0.013"/>
+  <testcase name="sighting_instantiatesCorrectlyWithRangerName_rangerName" classname="models.SightingTest" time="0.005"/>
 </testsuite>
