@@ -6,8 +6,6 @@ import java.util.Objects;
 
 public abstract class Animal {
     public String animalName;
-    public int animalId;
-    public int age;
     public String type;// type of animal either endangered or non-endangered.
     public int id;
 
@@ -16,13 +14,6 @@ public abstract class Animal {
         return animalName;
     }
 
-    public int getAnimalId() {
-        return animalId;
-    }
-
-    public int getAge() {
-        return age;
-    }
 
     public int getId() {
         return id;
@@ -30,10 +21,9 @@ public abstract class Animal {
 
     public void save() {
         try(Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO animals (animalName, animalId, type) VALUES (:animalName, :animalId, :type)";
+            String sql = "INSERT INTO animals (animalName, type) VALUES (:animalName, :type)";
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("animalName", this.animalName)
-                    .addParameter("animalId", this.animalId)
                     .addParameter("type", this.type)
                     .executeUpdate()
                     .getKey();
@@ -45,13 +35,13 @@ public abstract class Animal {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Animal animal = (Animal) o;
-        return animalId == animal.animalId &&
-                animalName.equals(animal.animalName);
+        return animalName.equals(animal.animalName) &&
+                type.equals(animal.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(animalName, animalId);
+        return Objects.hash(animalName, type);
     }
 
     public void delete() {

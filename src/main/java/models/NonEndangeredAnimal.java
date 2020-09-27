@@ -11,10 +11,8 @@ public class NonEndangeredAnimal extends Animal implements DatabaseManagement {
 
     public static final String DATABASE_TYPE = "NonEndangeredAnimal";
 
-    public NonEndangeredAnimal(String animalName, int animalId, int age, String animalGroupAge, String animalCondition) {
+    public NonEndangeredAnimal(String animalName, String animalGroupAge, String animalCondition) {
         this.animalName = animalName;
-        this.animalId = animalId;
-        this.age = age;
         this.animalGroupAge = animalGroupAge;
         this.animalCondition = animalCondition;
         type = DATABASE_TYPE;

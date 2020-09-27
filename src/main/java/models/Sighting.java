@@ -33,6 +33,10 @@ public class Sighting implements DatabaseManagement{
         return rangerName;
     }
 
+    public Timestamp getTime() {
+        return time;
+    }
+
     public static List<Sighting> all() {
         String sql = "SELECT * FROM sightings;";
         try(Connection con = DB.sql2o.open()) {

@@ -45,7 +45,7 @@ public class App {
             int animalId = Integer.parseInt(request.queryParams("animalId"));
             String animalGroupAge = request.queryParams("animalGroupAge");
             String animalCondition = request.queryParams("animalCondition");
-            EndangeredAnimal newEndangeredAnimal = new EndangeredAnimal(animalName, age, animalId, animalGroupAge, animalCondition);
+            EndangeredAnimal newEndangeredAnimal = new EndangeredAnimal(animalName, animalGroupAge, animalCondition);
             model.put("newEndangeredAnimal", newEndangeredAnimal);
             return new ModelAndView(model, "AllAnimals.hbs");
         }, new HandlebarsTemplateEngine());
@@ -70,7 +70,7 @@ public class App {
             int animalId = Integer.parseInt(request.queryParams("animalId"));
             String animalGroupAge = request.queryParams("animalGroupAge");
             String animalCondition = request.queryParams("animalCondition");
-            NonEndangeredAnimal newNonEndangeredAnimal = new NonEndangeredAnimal(animalName, age, animalId, animalGroupAge, animalCondition);
+            NonEndangeredAnimal newNonEndangeredAnimal = new NonEndangeredAnimal(animalName, animalGroupAge, animalCondition);
             model.put("newNonEndangeredAnimal", newNonEndangeredAnimal);
             return new ModelAndView(model, "AllAnimals.hbs");
         }, new HandlebarsTemplateEngine());
