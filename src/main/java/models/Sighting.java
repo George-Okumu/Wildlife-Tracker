@@ -3,6 +3,7 @@ package models;
 import org.sql2o.Connection;
 import org.sql2o.Sql2oException;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Objects;
 
@@ -11,6 +12,7 @@ public class Sighting implements DatabaseManagement{
     private String location;
     private String rangerName;
     private int id;
+    private Timestamp time;
 
 
     public Sighting(int animalId, String rangerName, String location) {
@@ -45,7 +47,7 @@ public class Sighting implements DatabaseManagement{
 
     public void save() {
         try(Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO sightings (animalId, rangerName, location) VALUES (:animalId, :rangerName, :location)";
+            String sql = "INSERT INTO sightings (animalId, rangerName, location, time) VALUES (:animalId, :rangerName, :location, now())";
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("animalId", this.animalId)
                     .addParameter("rangerName", this.rangerName)
