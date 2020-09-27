@@ -17,8 +17,13 @@ public class EndangeredAnimal extends Animal implements DatabaseManagement{
         type = DATABASE_TYPE;
     }
 
+    public String getAnimalGroupAge() {
+        return animalGroupAge;
+    }
 
-
+    public String getAnimalCondition() {
+        return animalCondition;
+    }
 
     public static List<EndangeredAnimal> all() {
         String sql = "SELECT * FROM animals WHERE type='endangeredAnimal';";
@@ -37,6 +42,25 @@ public class EndangeredAnimal extends Animal implements DatabaseManagement{
                     .throwOnMappingFailure(false)
                     .executeAndFetchFirst(EndangeredAnimal.class);
             return animal;
+        }
+    }
+
+    public void  saveAnimalGroupAge(String animalGroupAge){
+        String sql ="UPDATE animals SET animalGroupAge=:animalGroupAge WHERE id=:id";
+        try (Connection con = DB.sql2o.open()){
+            con.createQuery(sql)
+                    .addParameter("animalGroupAge", animalGroupAge)
+                    .addParameter("id", this.id)
+                    .executeUpdate();
+        }
+    }
+    public void saveAnimalCondition(String animalCondition){
+        String sql ="UPDATE animals SET animalCondition=:animalCondition WHERE id=:id";
+        try (Connection con = DB.sql2o.open()){
+            con.createQuery(sql)
+                    .addParameter("animalCondition", animalCondition)
+                    .addParameter("id", this.id)
+                    .executeUpdate();
         }
     }
 

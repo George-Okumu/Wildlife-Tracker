@@ -1,5 +1,6 @@
 # Project Name
 - Wildlife Tracker
+- ![](src/main/resources/public/images/ds.png) 
 
 ## About the Project
 - The Forest Service is considering a proposal from a timber company to clearcut a nearby forest of Douglas Fir. 
